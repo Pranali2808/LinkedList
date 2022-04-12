@@ -48,12 +48,21 @@ namespace LinkedList
             //linkedList.Display();
             //linkedList.Search(30);
 
-            Console.WriteLine("Insert After Value");
+            //Console.WriteLine("Insert After Value");
+            //linkedList.Add(56);
+            //linkedList.Add(30);
+            //linkedList.Add(70);
+            //linkedList.Display();
+            //linkedList.InsertAfter(30, 40);
+
+            Console.WriteLine("Delete particular value");
             linkedList.Add(56);
             linkedList.Add(30);
             linkedList.Add(70);
-            linkedList.Display();
             linkedList.InsertAfter(30, 40);
+            linkedList.Display();
+            linkedList.DeleteElement(40);
+            linkedList.Size();
 
             linkedList.Display();
             
