@@ -13,10 +13,15 @@ namespace LinkedList
             Console.WriteLine("Welcome to the LinkedList Program\n");
 
             SimpleLinkedList linkedList = new SimpleLinkedList();
-            linkedList.AddLast(56);
-            linkedList.AddLast(30);
-            linkedList.AddLast(70);
+            //linkedList.Add(56);
+            //linkedList.Add(30);
+            //linkedList.Add(70);
+
+            linkedList.AddInReverseOrder(70);
+            linkedList.AddInReverseOrder(30);
+            linkedList.AddInReverseOrder(56);
             linkedList.Display();
+           
 
             Console.ReadLine();
         }

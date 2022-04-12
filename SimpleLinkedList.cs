@@ -8,8 +8,26 @@ namespace LinkedList
 {
     internal class SimpleLinkedList
     {
-        public Node head;
-        public void AddLast(int data)
+        internal Node head;
+        internal void Add(int data)
+        {
+            Node node = new Node(data);
+            if (this.head == null)
+            {
+                this.head = node;
+            }
+            else
+            {
+                Node temp = head;
+                while (temp.next != null)
+                {
+                    temp = temp.next;
+                }
+                temp.next = node;
+            }
+            Console.WriteLine("{0} is inserted into the linked list", node.data);
+        }
+        internal void AddInReverseOrder(int data)
         {
             Node newNode = new Node(data);
             if (this.head == null)
@@ -19,31 +37,24 @@ namespace LinkedList
             else
             {
                 Node temp = this.head;
-                while (temp.next != null)
-                {
-                    temp = temp.next;
-                }
-                temp.next = newNode;
+                head = newNode;
+                head.next = temp;
             }
-            Console.WriteLine("{0} is inserted into LinkedList", newNode.data);
         }
-        public void Display()
+        internal void Display()
         {
-            Console.WriteLine("Displaying Nodes:");
             Node temp = this.head;
             if (temp == null)
             {
-                Console.WriteLine("LinkedList is Empty");
+                Console.WriteLine("LinkedList is empty");
                 return;
             }
-            else
+            while (temp != null)
             {
-                while (temp != null)
-                {
-                    Console.Write(" " + temp.data + " ");
-                    temp = temp.next;
-                }
+                Console.Write(temp.data + " ");
+                temp = temp.next;
             }
+            Console.WriteLine();
         }
     }
 }
