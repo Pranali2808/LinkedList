@@ -8,26 +8,8 @@ namespace LinkedList
 {
     internal class SimpleLinkedList
     {
-        internal Node head;
-        internal void Add(int data)
-        {
-            Node node = new Node(data);
-            if (this.head == null)
-            {
-                this.head = node;
-            }
-            else
-            {
-                Node temp = head;
-                while (temp.next != null)
-                {
-                    temp = temp.next;
-                }
-                temp.next = node;
-            }
-            Console.WriteLine("{0} is inserted into the linked list", node.data);
-        }
-        internal void AddInReverseOrder(int data)
+        public Node head;
+        public void Add(int data)
         {
             Node newNode = new Node(data);
             if (this.head == null)
@@ -37,9 +19,20 @@ namespace LinkedList
             else
             {
                 Node temp = this.head;
-                head = newNode;
-                head.next = temp;
+                while (temp.next != null)
+                {
+                    temp = temp.next;
+                }
+                temp.next = newNode;
             }
+            Console.WriteLine("{0} is inserted into LinkedList", newNode.data);
+        }
+        public void AddFirst(int data)
+        {
+            Node newNode = new Node(data);
+            newNode.next = this.head;
+            this.head = newNode;
+            Console.WriteLine("{0} is inserted into LinkedList", newNode.data);
         }
         public void Append(int data)
         {
@@ -54,7 +47,7 @@ namespace LinkedList
             }
             else if (index == 0)
             {
-                Add(data);
+                AddFirst(data);
             }
             else
             {
@@ -68,48 +61,70 @@ namespace LinkedList
                 Console.WriteLine("{0} is inserted at index position {1}", data, index);
             }
         }
-        internal Node RemoveFirstNode()
+        public void Pop()
         {
+            if (head != null)
+            {
+                head = head.next;
+                Console.WriteLine("\nFirst element deleted");
+            }
+        }
+        public int PopLast()
+        {
+            Node temp = this.head;
             if (this.head == null)
             {
-                return null;
+                Console.WriteLine("LinkedList id empty");
+                return 0;
             }
-            this.head = this.head.next;
-            return this.head;
+            if (this.head.next == null)
+            {
+                this.head = null;
+                return 0;
+            }
+            while (temp.next.next != null)
+            {
+                temp = temp.next;
+            }
+            int delNode = temp.next.data;
+            temp.next = null;
+            return delNode;
         }
-        internal Node RemoveLastNode()
+        public void Search(int data)
         {
-            if (head == null)
+            Node temp = head;
+            int search = 0;
+            while (temp != null)
             {
-                return null;
+                if (temp.data == data)
+                {
+                    search = 1;
+                }
+                temp = temp.next;
             }
-            if (head.next == null)
-            {
-                return null;
-            }
-            Node NewNode = head;
-            while (NewNode.next.next != null)
-            {
-                NewNode = NewNode.next;
-            }
-            NewNode.next = null;
-            return head;
+            if (search == 1)
+                Console.WriteLine("\n{0} is present in the linkedlist", data);
+            else
+                Console.WriteLine("\n{0} is not present in the linkedlist", data);
         }
-            internal void Display()
+
+        public void Display()
         {
+            Console.WriteLine("Displaying Nodes:");
             Node temp = this.head;
             if (temp == null)
             {
-                Console.WriteLine("LinkedList is empty");
+                Console.WriteLine("LinkedList is Empty");
                 return;
             }
-            while (temp != null)
+            else
             {
-                Console.Write(temp.data + " ");
-                temp = temp.next;
+                while (temp != null)
+                {
+                    Console.Write(" " + temp.data + " ");
+                    temp = temp.next;
+                }
             }
-            Console.WriteLine();
         }
-        
     }
 }

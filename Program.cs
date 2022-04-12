@@ -31,11 +31,17 @@ namespace LinkedList
             //linkedList.Add(70);
             //linkedList.RemoveFirstNode();
             //Console.WriteLine("After removing the first node of Linked List : ");
+            //linkedList.Add(56);
+            //linkedList.Add(30);
+            //linkedList.Add(70);
+            //linkedList.RemoveLastNode();
+            //Console.WriteLine("After removing the last node of Linked List : ");
+            Console.WriteLine("Search the node from value");
             linkedList.Add(56);
             linkedList.Add(30);
             linkedList.Add(70);
-            linkedList.RemoveLastNode();
-            Console.WriteLine("After removing the last node of Linked List : ");
+            linkedList.Display();
+            linkedList.Search(30);
 
             linkedList.Display();
             
