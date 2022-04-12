@@ -26,11 +26,16 @@ namespace LinkedList
             //linkedList.Append(56);
             //linkedList.Append(70);
             //linkedList.Insert(1, 30);
+            //linkedList.Add(56);
+            //linkedList.Add(30);
+            //linkedList.Add(70);
+            //linkedList.RemoveFirstNode();
+            //Console.WriteLine("After removing the first node of Linked List : ");
             linkedList.Add(56);
             linkedList.Add(30);
             linkedList.Add(70);
-            linkedList.RemoveFirstNode();
-            Console.WriteLine("After removing the first node of Linked List : ");
+            linkedList.RemoveLastNode();
+            Console.WriteLine("After removing the last node of Linked List : ");
 
             linkedList.Display();
             
