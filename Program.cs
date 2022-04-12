@@ -20,11 +20,15 @@ namespace LinkedList
             //linkedList.AddInReverseOrder(70);
             //linkedList.AddInReverseOrder(30);
             //linkedList.AddInReverseOrder(56);
+            //linkedList.Append(56);
+            //linkedList.Append(30);
+            //linkedList.Append(70);
             linkedList.Append(56);
-            linkedList.Append(30);
             linkedList.Append(70);
-            linkedList.Display();
-           
+            linkedList.Insert(1, 30);
+
+           linkedList.Display();
+            
 
             Console.ReadLine();
         }
