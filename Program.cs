@@ -12,7 +12,8 @@ namespace LinkedList
         {
             Console.WriteLine("Welcome to the LinkedList Program\n");
 
-            SimpleLinkedList linkedList = new SimpleLinkedList();
+            //SimpleLinkedList linkedList = new SimpleLinkedList();
+           SortedLinkedList sortedLinkedList = new SortedLinkedList();
             //linkedList.Add(56);
             //linkedList.Add(30);
             //linkedList.Add(70);
@@ -55,21 +56,24 @@ namespace LinkedList
             //linkedList.Display();
             //linkedList.InsertAfter(30, 40);
 
-            Console.WriteLine("Delete particular value");
-            linkedList.Add(56);
-            linkedList.Add(30);
-            linkedList.Add(70);
-            linkedList.InsertAfter(30, 40);
-            linkedList.Display();
-            linkedList.DeleteElement(40);
-            linkedList.Size();
+            //Console.WriteLine("Delete particular value");
+            //linkedList.Add(56);
+            //linkedList.Add(30);
+            //linkedList.Add(70);
+            //linkedList.InsertAfter(30, 40);
+            //linkedList.Display();
+            //linkedList.DeleteElement(40);
+            //linkedList.Size();
+            //linkedList.Display();
 
-            linkedList.Display();
-            
-
+            Console.WriteLine("Sorted linkedlist");
+            sortedLinkedList.Add(56);
+            sortedLinkedList.Add(30);
+            sortedLinkedList.Add(40);
+            sortedLinkedList.Add(70);
+            Console.WriteLine("Ordered Linked List in Ascending Order ::");
+            sortedLinkedList.Display();
             Console.ReadLine();
         }
     }
 }
-    
-
