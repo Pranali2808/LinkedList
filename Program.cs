@@ -17,9 +17,12 @@ namespace LinkedList
             //linkedList.Add(30);
             //linkedList.Add(70);
 
-            linkedList.AddInReverseOrder(70);
-            linkedList.AddInReverseOrder(30);
-            linkedList.AddInReverseOrder(56);
+            //linkedList.AddInReverseOrder(70);
+            //linkedList.AddInReverseOrder(30);
+            //linkedList.AddInReverseOrder(56);
+            linkedList.Append(56);
+            linkedList.Append(30);
+            linkedList.Append(70);
             linkedList.Display();
            
 
